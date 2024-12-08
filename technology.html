@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+  font-family: Arial, sans-serif;
+}
+
+/* header */
+
+.main {
+    width: 100%;
+   /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7)50%, rgba(0,0,0,0.7)50%), url("/api/placeholder/1920/1080");*/
+   background: white;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+.active{
+  background: #1395d3;
+}
+
+
+.navbar {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background: white;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+  color: #1395d3;
+  font-size: 28px;
+  padding: 15px 25px;
+  float: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  border-radius: 8px;
+  height: 50px;
+  width: 50px;
+}
+
+.menu {
+  float: right;
+  width: 95%;
+  justify-items: center;
+  margin-right: 30px;
+  
+}
+
+.ull {
+  
+  background:#1f2756;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 250px;
+  
+
+}
+
+.ull li {
+  list-style: none;
+  margin: 0 20px;
+}
+
+.ull  a {
+  text-decoration: none;
+  color:white;
+  font-size: 16px;
+  font-weight:bolder;
+  transition: 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.ull  a:hover {
+  background:#1395d3;
+  color: white;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: rgba(146, 188, 228, 0.6);
+  border-radius: 25px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-bottom: 120px;
+}
+
+.srch {
+  width: 200px;
+  height: 35px;
+  background:transparent;
+  border:none ;
+  padding: 0 15px;
+  color: white;
+  font-size: 16px;
+}
+
+.srch::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+.btn {
+  height: 35px;
+  padding: 0 20px;
+  background: #1395d3;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1395d3;
+  transform: translateY(-2px);
+}
+/* end */
+    body {
+  font-family: Arial, sans-serif;
+}
+
+h1{
+  margin-top: 150px;
+  margin-left: 50px;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar li:hover, .sidebar li.active {
+  background-color: #e0e0e0;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#newcard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.newcard {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.newcard h3 {
+  font-size: 1.5em;
+}
+
+.newcard p {
+  margin: 10px 0;
+}
+
+.newcard .rating {
+  font-size: 0.9em;
+  color: #f39c12;
+}
+
+.card-image{
+  width: 200px;
+  height: 10rem;
+}
+  </style>
+</head>
+<body>
+  <div id="home" class="main">
+    <div class="navbar">
+        <div class="logo">
+            <img src="Logo.png" alt="Logo"><b>KPB Support Solutions </b>
+        </div>
+        <div class="menu">
+            <ul class="ull">
+                <li><a href="./index.html">HOME</a></li>
+                <li><a class="active" href="./Services.html">SERVICES</a></li>
+                <li><a href="./product.html">PRODUCT</a></li>
+                <li><a  href="./prices.html">PRICING</a></li>
+                <li><a href="#about">RESOURCES</a></li>
+                <li>
+                    <div class="search">
+                        <input class="srch" type="search" placeholder="Search...">
+                        <button class="btn">Search</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+  <h1>Technology</h1>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li class="active" onclick="changeContent('ec')">Electronic Components</li>
+            <li onclick="changeContent('semiconductors')">Semiconductors</li>
+            <li onclick="changeContent('em')">Electronics Manufacturing</li>
+            <li onclick="changeContent('et')">Emerging Technologies</li>
+            <li onclick="changeContent('h&n')">Hardware & Networking</li>
+            <li onclick="changeContent('callcentre')">Call Centre</li>
+            <li onclick="changeContent('internet')">Internet</li>
+            <li onclick="changeContent('sp')">Sofware product</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="newcard-container">
+            <!-- newcards will be dynamically loaded here -->
+        </div>
+    </div>
+</div>
+</body>
+<script>
+  const courses = {
+  'ec': [
+      { imglink:'./logo/microsoft.webp', title: 'Machine Learning', rating: '4.5', learners: '35,631 learners', duration: '8 weeks' },
+      { imglink:'./logo/ibm.webp', title: 'Advanced Excel', rating: '4.4', learners: '41,295 learners', duration: '4 weeks' },
+      { imglink:'./logo/zomato.webp', title: 'AutoCAD', rating: '4.3', learners: '36,197 learners', duration: '6 weeks' },
+  ],
+  'em': [
+      { imglink:'./logo/facebook.webp', title: 'Programming with C and C++', rating: '4.6', learners: '30,231 learners', duration: '8 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'JavaScript Basics', rating: '4.7', learners: '50,321 learners', duration: '6 weeks' },
+      { imglink:'./logo/netflix.webp', title: 'Python for Data Science', rating: '4.8', learners: '45,123 learners', duration: '10 weeks' },
+  ],
+  'h&n': [
+      { imglink:'./logo/ibm.webp', title: 'Business Analytics', rating: '4.4', learners: '29,153 learners', duration: '5 weeks' },
+      { imglink:'./logo/zomato.webp', title: 'Project Management', rating: '4.5', learners: '38,321 learners', duration: '7 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'Marketing Fundamentals', rating: '4.2', learners: '21,632 learners', duration: '6 weeks' },
+  ],
+  'callcentre': [
+      { imglink:'./logo/zomato.webp', title: 'mechanical engineering', rating: '4.9', learners: '29,143 learners', duration: '52 weeks' },
+      { imglink:'./logo/ibm.webp', title: 'civil engineering', rating: '4.5', learners: '38,565 learners', duration: '56 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'computer science engineering', rating: '4.6', learners: '21,765 learners', duration: '120 weeks' },
+  ],
+  '': [
+      { imglink:'./logo/amazon.webp', title: 'Business Analytics', rating: '4.4', learners: '29,153 learners', duration: '5 weeks' },
+      { imglink:'./logo/zomato.webp', title: 'Project Management', rating: '4.5', learners: '38,321 learners', duration: '7 weeks' },
+      { imglink:'./logo/ibm.webp', title: 'Marketing Fundamentals', rating: '4.2', learners: '21,632 learners', duration: '6 weeks' },
+  ],
+  'ec': [
+      { imglink:'./logo/facebook.webp', title: 'Business Analytics', rating: '4.4', learners: '29,153 learners', duration: '5 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'Project Management', rating: '4.5', learners: '38,321 learners', duration: '7 weeks' },
+      {  imglink:'./logo/ibm.webp', title: 'Marketing Fundamentals', rating: '4.2', learners: '21,632 learners', duration: '6 weeks' },
+  ],
+  'ai': [
+      { imglink:'./logo/facebook.webp', title: 'Programming with C and C++', rating: '4.6', learners: '30,231 learners', duration: '8 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'JavaScript Basics', rating: '4.7', learners: '50,321 learners', duration: '6 weeks' },
+      { imglink:'./logo/netflix.webp', title: 'Python for Data Science', rating: '4.8', learners: '45,123 learners', duration: '10 weeks' },
+  ],
+  'arts': [
+      { imglink:'./logo/zomato.webp', title: 'mechanical engineering', rating: '4.9', learners: '29,143 learners', duration: '52 weeks' },
+      { imglink:'./logo/ibm.webp', title: 'civil engineering', rating: '4.5', learners: '38,565 learners', duration: '56 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'computer science engineering', rating: '4.6', learners: '21,765 learners', duration: '120 weeks' },
+  ],
+  'language': [
+      { imglink:'./logo/ibm.webp', title: 'Business Analytics', rating: '4.4', learners: '29,153 learners', duration: '5 weeks' },
+      { imglink:'./logo/zomato.webp', title: 'Project Management', rating: '4.5', learners: '38,321 learners', duration: '7 weeks' },
+      { imglink:'./logo/amazon.webp', title: 'Marketing Fundamentals', rating: '4.2', learners: '21,632 learners', duration: '6 weeks' },
+  ],
+};
+
+
+function changeContent(category) {
+  const newcardContainer = document.getElementById('newcard-container');
+  newcardContainer.innerHTML = ''; // Clear previous content
+
+  courses[category].forEach(course => {
+      const newcard = document.createElement('div');
+      newcard.classList.add('newcard');
+      newcard.innerHTML = `
+          <img class="card-image" src="${course.imglink}" alt="Image 1">
+          <h3>${course.title}</h3>
+          <p class="rating">Rating: ${course.rating}</p>
+          <p>${course.learners}</p>
+          <p>Duration: ${course.duration}</p>
+      `;
+      newcardContainer.appendChild(newcard);
+  });
+
+  // Remove 'active' class from all sidebar items
+  const sidebarItems = document.querySelectorAll('.sidebar li');
+  sidebarItems.forEach(item => item.classList.remove('active'));
+
+  // Add 'active' class to the clicked item
+  document.querySelector(`[onclick="changeContent('${category}')"]`).classList.add('active');
+}
+
+// Initial content load
+changeContent('popular');
+</script>
+</html>

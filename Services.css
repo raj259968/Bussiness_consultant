@@ -1,0 +1,242 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.main {
+    width: 100%;
+   /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7)50%, rgba(0,0,0,0.7)50%), url("/api/placeholder/1920/1080");*/
+   background: white;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+/*use for fix backgrond color in header section */
+.active{
+  background: #1395d3;
+}
+
+.navbar {
+    top: 0;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    background: white;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+    color: #1395d3;
+    font-size: 28px;
+    padding: 15px 25px;
+    float: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+}
+
+.menu {
+    float: right;
+    width: 95%;
+    justify-items: center;
+    margin-right: 30px;
+    
+}
+
+.ull {
+    
+    background:#1f2756;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 250px;
+    
+
+}
+
+.ull li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.ull  a {
+    text-decoration: none;
+    color:white;
+    font-size: 16px;
+    font-weight:bolder;
+    transition: 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.ull  a:hover {
+    background:#1395d3;
+    color: white;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: rgba(146, 188, 228, 0.6);
+    border-radius: 25px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-bottom: 120px;
+}
+
+.srch {
+    width: 200px;
+    height: 35px;
+    background:transparent;
+    border:none ;
+    padding: 0 15px;
+    color: white;
+    font-size: 16px;
+}
+
+.srch::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.btn {
+    height: 35px;
+    padding: 0 20px;
+    background: #1395d3;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1395d3;
+    transform: translateY(-2px);
+}
+/*Industry*/
+
+@keyframes cardSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.courses-section {
+  margin-top: 80px;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.courses-title {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.courses-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: #007bff;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: cardSlideUp 0.7s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card:nth-child(n+2) {
+  animation-delay: calc(0.2s * var(--n));
+}
+
+.course-icon {
+  font-size: 50px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.course-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.course-description {
+  color: #666;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.course-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.course-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.course-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.course-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.highlight {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
